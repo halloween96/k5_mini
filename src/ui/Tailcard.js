@@ -2,7 +2,7 @@ import logo from '../assets/images/logo.png'
 import { MdTimer } from "react-icons/md";
 import { IoBicycleSharp } from "react-icons/io5";
 import { useParams } from 'react-router-dom';
-export default function Tailcard({ name, title, course, tlength, time, lev }) {
+export default function Tailcard({ name, title, course, tlength, time, lev, seq }) {
 
   const level = useParams().item;
   const levlist = {'1':'매우쉬움','2':'쉬움','3':'보통','4':'어려움','5':'매우어려움'}

@@ -3,7 +3,7 @@ import { useState, useRef } from 'react'
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom'
 import { useRecoilState } from 'recoil';
-import { userToken } from './UserAtom';
+import { userToken } from './TokenAtom';
 
 export default function LogIn() {
 
@@ -22,46 +22,36 @@ export default function LogIn() {
     const onSubmithandle = (e) => {
         e.preventDefault();
 
-        console.log(emailRef.current.value)
+        // console.log(emailRef.current.value)
         setMember({
-            // id: emailRef.current.value,
-            // password: passRef.current.value
-            id: "admin@email.com",
-            password: "1234"
+            id: emailRef.current.value,
+            password: passRef.current.value
+            // id: "admin@email.com",
+            // password: "1234"
         })
-
     }
 
     useEffect(() => {
         if (member.email === "") return;
 
-        console.log("member", member);
-        const request = axios.post("http://10.125.121.204:8080/login", member)
+        // console.log("member", member);
+        axios.post("http://10.125.121.204:8080/login", member)
             .then(res => {
+                // console.log("res", res)
                 if (res.headers.get("authorization")) {
-                    console.log("login", res.headers.get("authorization"))
+                    // console.log("login", res.headers.get("authorization"))
+                    alert("로그인 되었습니다.")
                     navigate("/")
 
-                    const temp = res.headers.get("authorization")
-                    localStorage.setItem('token', temp);
-                    setIsLogin(temp);
+                    const accessToken = res.headers.get("authorization")
+                    localStorage.setItem('token', accessToken);
+                    setIsLogin(accessToken);
                 }
                 else {
-                    alert("아이디와 비밀번호 정보를 확인해 주세요")
+                    alert("아이디와 비밀번호 정보를 확인해 주세요.")
                 }
             })
             .catch(err => console.log(err))
-
-        // fetch("http://10.125.121.204:8080/login", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json; charset=utf-8"
-        //     },
-        //     body: JSON.stringify(member)
-        // })
-        //     .then(res => console.log(res))
-        //     .then(data => console.log(data))
-        // console.log(member)
     }, [member]);
 
     useEffect(() => {
@@ -92,16 +82,18 @@ export default function LogIn() {
                     <div className='flex justify-around'>
                         <button type='button'
                             onClick={onSubmithandle}
-                            className='w-2/5 mt-8 py-2 rounded-lg bg-emerald-500 text-white'>
+                            className='w-2/5 mt-8 py-2 rounded-lg bg-emerald-500 border-2 border-emerald-500 text-white hover:bg-white hover:text-emerald-500 hover:border-2 hover:border-emerald-500'>
                             로그인
                         </button>
-                        <Link to="/Register" className='flex justify-center w-2/5 mt-8 py-2 border-emerald-500 border-2 rounded-lg text-emerald-500'>
-                            <button type='button'>
-                                회원가입
-                            </button>
-                        </Link>
                     </div>
                 </form>
+            </div>
+            <div className='flex justify-center'>
+                <Link to="/Register" className='w-2/5 mt-8 py-2 border-slate-200 border-t-2 flex justify-center text-slate-500 hover:text-emerald-500'>
+                    <button type='button' className='w-full'>
+                        회원가입
+                    </button>
+                </Link>
             </div>
         </main>
     )

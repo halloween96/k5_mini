@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import logo from '../src/assets/images/logo.png'
 import Home from './Home'
 import LogIn from './LogIn';
@@ -9,6 +10,9 @@ import Register from './Register';
 import Write from './Write';
 import Bycle from './Bycle';
 import Nav from './Nav';
+import Detail from './Detail';
+import Update from './Update';
+import Road from './Road';
 
 import { RecoilRoot } from 'recoil'
 
@@ -36,6 +40,9 @@ function App() {
             <Route path='/Community' element={<Community />} />
             <Route path='/Write' element={<Write />} />
             <Route path='/Register' element={<Register />} />
+            <Route path='/board/:seq' element={<Detail />} />
+            <Route path='/member/board' element={<Update />} />
+            <Route path='/roadinfo/:seq' element={<Road />} />
             {/* <Route path='/Sprout' element={<Sprout />} /> */}
             {/* <Route path='/MapTest' element={<MapTest />} /> */}
           </Routes>

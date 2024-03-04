@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { userToken } from './UserAtom';
+import { userToken } from './TokenAtom';
 import { useRecoilValue } from 'recoil'
 
 export default function Nav() {
