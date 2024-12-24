@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# 수기 영수증 텍스트 데이터 추출 분석
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 프로젝트 개요
 
-## Available Scripts
+### 1.1 프로젝트 추진 배경
+- 자전거 국토 종주에 대한 전반적인 개요 및 개별 자전거길의 상세 설명과 비회원 이용가능, 회원가입을 통한 추가적인 정보 공유를 꾀함.
 
-In the project directory, you can run:
+### 1.2 목적
+- 안전한 국토종주 자전거 라이딩을 위한 정보 조회 및 공유 웹 서비스
+- 자전거길의 후기 작성을 통한 회원 간의 공유 활성화
+---
 
-### `npm start`
+## 시스템 설계 내용
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2.1 서비스 요구 사항
+- 국토종주 자전거길 전체 조회
+- 개별 자전거길 선택시 해당 자전거길의 상세정보 확인
+- 로그인 탭에서 로그인 및 회원가입 / 중복 계정 확인
+- 후기 작성 및 수정 시 권한 확인
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 팀 구성원별 작업 내용
+- **FE**: 문형호
+- **BE**: 김수정
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 추진 일정 경과
+- **2024-02-28 ~ 2024-04-04**
+![세부 일정](https://github.com/user-attachments/assets/093dba05-0191-42a4-8caa-b9ad1b6d43ee)
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 아쉬운 점
+1. 회원 가입 시 인증 방식 미흡.
+2. 영수증 업로드 및 수정 시 회원 간 알림 기능 부재.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 개선 사항
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### FE
+1. OAuth 로그인 기능 이해 부족.
+2. 반응형 페이지 미완성.
+3. 컴포넌트 재사용성 미흡.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### BE
+1. OAuth 로그인 연결 부족.
+2. N+1 문제 미해결.
+3. 테스트 코드 미완성.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### DA
+1. 손글씨 모델 완성도 부족.
+2. 다양한 모델 시도.
+3. 학습 데이터 부족.
+4. 학습 미흡.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 참고 자료
+- 프로젝트 관련 참고 자료 목록 (작성 시 추가).
+![참고자료](https://github.com/user-attachments/assets/ed598933-1e2e-46bd-af94-f453dc549740)
