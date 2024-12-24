@@ -23,7 +23,21 @@
 ## 팀 구성원별 작업 내용
 - **FE**: 문형호
 - **BE**: 김수정
-
+![홈화면](https://github.com/user-attachments/assets/24549e27-4feb-4e4f-bddc-c2e7c228b1f6)
+----
+![리스트](https://github.com/user-attachments/assets/d4ed090c-2215-4074-adeb-c11cd134e5d1)
+----
+![설명](https://github.com/user-attachments/assets/1feba110-513f-4a07-9dde-ee91dfb3d47b)
+----
+![로그인](https://github.com/user-attachments/assets/8244bce5-8659-41ed-83bb-6880337ef194)
+----
+![회원가입](https://github.com/user-attachments/assets/22b5c702-fe11-4fe8-8b00-43789ed69e71)
+----
+![후기](https://github.com/user-attachments/assets/cd806d3e-af72-4f5b-a67e-5284d384b595)
+----
+![후기상세](https://github.com/user-attachments/assets/9cf2a73a-38e9-4d4d-97ba-991e1c5466b0)
+----
+![후기수정](https://github.com/user-attachments/assets/d6aa6ddf-3b22-4b3c-b48b-26545c603128)
 
 ---
 
