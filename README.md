@@ -21,8 +21,7 @@
 ---
 
 ## 팀 구성원별 작업 내용
-- **FE**: 문형호
-- **BE**: 김수정
+- **FE**: 문형호 **BE**: 김수정
 ![홈화면](https://github.com/user-attachments/assets/24549e27-4feb-4e4f-bddc-c2e7c228b1f6)
 ----
 ![리스트](https://github.com/user-attachments/assets/d4ed090c-2215-4074-adeb-c11cd134e5d1)
