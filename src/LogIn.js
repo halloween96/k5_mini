@@ -11,6 +11,7 @@ export default function LogIn() {
 
     const [Islogin, setIsLogin] = useRecoilState(userToken);
 
+    // 입력정보 저장
     const [member, setMember] = useState({
         email: '',
         password: ''
@@ -20,6 +21,7 @@ export default function LogIn() {
     const passRef = useRef();
 
     const onSubmithandle = (e) => {
+        // 미입력 제출 방지
         e.preventDefault();
 
         // console.log(emailRef.current.value)

@@ -3,10 +3,15 @@ import { useParams } from 'react-router-dom';
 import { MdTimer } from "react-icons/md";
 import { IoBicycleSharp } from "react-icons/io5";
 import axios from 'axios';
+// openlayer 지도 라이브러리
 import { Map as OlMap, View } from "ol";
+// 기본 지도
 import { defaults as defaultControls } from "ol/control";
+// 좌표 변환
 import { fromLonLat, get as getProjection } from "ol/proj";
+// 지도 레이어 설정
 import { Tile as TileLayer, Vector as VectorLayer } from "ol/layer";
+// 지도 타일 및 벡터 데이터
 import { XYZ, Vector as VectorSource } from "ol/source";
 import "ol/ol.css";
 
@@ -14,6 +19,7 @@ export default function Road() {
     const { seq } = useParams();
     const [road, setRoad] = useState([]);
     
+    // 백 서버에서 도로정보 가져오기
     const getRoad = async () => {
         const resp = await axios.get(`http://10.125.121.204:8080/roadinfo/${seq}`);
         setRoad(resp.data.body);
@@ -26,6 +32,7 @@ export default function Road() {
 
     const mapContent = useRef(null);
 
+    // 벡터 레이어 초기화
     const initVectorLayer = new VectorLayer({
         source: new VectorSource(),
     });
@@ -33,6 +40,7 @@ export default function Road() {
         if (!mapContent.current) {
             return;
         }
+        // openlayer 지도 생성
         const map = new OlMap({
             controls: defaultControls({ zoom: false, rotate: false }).extend([]),
             layers: [
@@ -45,7 +53,9 @@ export default function Road() {
                 initVectorLayer,
             ],
             view: new View({
+                // 좌표 설정
                 projection: getProjection("EPSG:3857"),
+                // 초기 중심 좌표
                 center: fromLonLat([129.080278, 35.231489]),
                 zoom: 12,
                 minZoom: 1,

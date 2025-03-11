@@ -7,11 +7,13 @@ import { userToken } from './TokenAtom';
 export default function Detail() {
 
     const navigate = useNavigate();
+    // 게시글 고유번호 확인
     const { seq } = useParams();
     const [detial, setDetail] = useState([]);
 
     const token = useRecoilValue(userToken);
 
+    // 게시글 수정 페이지 이동
     const Update = () => {
         navigate("/member/board", {
             state: {
@@ -20,18 +22,21 @@ export default function Detail() {
         });
     };
 
+    // 게시글 상세정보 확인
     const getDetail = async () => {
         const resp = await axios.get(`http://10.125.121.204:8080/board/${seq}`);
         setDetail(resp.data.body);
         // console.log("detail: ", resp.data.body)
     };
 
+    // 게시글 삭제
     const Delete = async () => {
         if (window.confirm("게시글을 삭제하시겠습니까?")) {
             await axios.delete(
                 `http://10.125.121.204:8080/member/board/${seq}`,
                 {
                     headers: {
+                        // 토큰으로 삭제 권한 확인
                         Authorization: token
                     }
                 })

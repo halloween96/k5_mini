@@ -14,7 +14,9 @@ export default function Write() {
 
     const token = useRecoilValue(userToken);
 
+    // 게시글 작성
     const onWriterhandle = (e) => {
+        // 미입력 제출 방지
         e.preventDefault();
 
         if (titleRef.current.value === "") {

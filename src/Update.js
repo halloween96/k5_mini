@@ -24,14 +24,17 @@ export default function Update() {
 
   const seq = location.state.seq;
 
+  // 백서버에서 게시글 데이터 가져오기
   const getBoard = async () => {
     const resp = await axios.get(`http://10.125.121.204:8080/board/${seq}`);
     setBoard(resp.data.body);
   };
 
+  // 게시글 수정
   const Update = async (e) => {
     e.preventDefault();
     // console.log("seq", seq,token,board.title)
+    // put 요청으로 게시글 데이터 수정
     await axios.put(`http://10.125.121.204:8080/member/board`,
     {
       seq: seq,
@@ -40,6 +43,7 @@ export default function Update() {
     },
       {
         headers: {
+          // 토큰으로 권한 확인
           Authorization: token
         }
       })
