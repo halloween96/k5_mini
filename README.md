@@ -30,7 +30,7 @@
 
 ### API 연동
 - REST API
-- Fetch API
+- Axios
 
 ### Collaboration
 - Git
